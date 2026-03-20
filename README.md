@@ -21,3 +21,4 @@ Just created the structure.
 
 ## Try it out
  - Rock Paper Scissors: https://aswanthcv.github.io/js-mini-projects/rock-paper-scissors/
+ - TO DO List: https://aswanthcv.github.io/js-mini-projects/to-do-list/
