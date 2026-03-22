@@ -22,7 +22,7 @@
     }
     .main{
       margin: auto;
-      width: 50%;
+      width: 40%;
       background-color: #1e334f;
       display: flex;
       flex-direction: column;
@@ -77,11 +77,17 @@
       color: white;
       border: none;
     }
-    .done-btn{
-      background-color: rgb(0, 183, 0);
+    .pending{
+      background-color: rgb(224, 174, 9);
     }
-    .done-btn:hover{
-      background-color: rgb(0, 164, 0);
+    .pending-btn:hover{
+      background-color: rgb(208, 160, 4);
+    }
+    .completed{
+      background-color: rgb(0, 193, 0);
+    }
+    .completed:hover{
+      background-color: rgb(1, 155, 1);
     }
     .dlt-btn{
       background-color: rgb(249, 1, 1);
@@ -124,15 +130,26 @@
     let btnContaier = document.createElement("div");
 
     let doneBtn = document.createElement("button");
-    doneBtn.textContent="Done";
-    doneBtn.classList.add("done-btn");
+    doneBtn.textContent="Pending";
+    doneBtn.classList.add("pending");
 
     let dltBtn = document.createElement("button");
     dltBtn.textContent="Delete";
     dltBtn.classList.add("dlt-btn");
 
     doneBtn.onclick=function(){
-      textSpan.classList.toggle("done-text");
+      // textSpan.classList.toggle("done-text");
+      if (doneBtn.textContent === "Pending"){
+        doneBtn.textContent = "Completed";
+        doneBtn.classList.add("completed");
+        textSpan.classList.add("done-text"); 
+      }
+      else{
+        doneBtn.textContent="Pending";
+        doneBtn.classList.remove("completed");
+        doneBtn.classList.add("pending")
+        textSpan.classList.remove("done-text");
+      }
     }
     dltBtn.onclick=function(){
       task.remove();
