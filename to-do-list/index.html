@@ -3,89 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TO-DO</title>
+  <title>TO DO LIST</title>
   <style>
-    body {
-      height: 100vh;
+    *{
       margin: 0;
-      background: linear-gradient(to bottom, #101828, #243b55);
-      font-family: Arial, Helvetica, sans-serif;
-      color: white;
-      text-align: center;
-      overflow: hidden;
+      padding: 0;
+      box-sizing: border-box;
     }
-
-    h1 {
-      margin-top: 20px;
+    body{
+      background: linear-gradient(145deg, #101828 0%, #1e334f 50%, #243b55 100%);
+      min-height: 100vh;
+      font-family: Impact, 'Arial Narrow Bold', sans-serif;
+      text-align: center;  
     }
-
-    #main {
-      width: 20%;
+    h1{
+      padding: 30px;
+      color:whitesmoke;
+    }
+    .main{
+      margin: auto;
+      width: 50%;
+      background-color: #1e334f;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 20px;
-      border-radius: 10px;
-      background:transparent;
-      border: 1px solid #6d7f94;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      margin: 30px auto;
+      border: 0.5px solid rgba(109, 127, 148, 0.5);
+      border-radius: 25px;
+      box-shadow: 10px 10px 15px #132133;
+      gap: 15px;
     }
-    input {
-      width: 65%;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-    }
-    button {
-      padding: 10px 15px;
-      border-radius: 5px;
-      border: none;
-      background-color: #00c853;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    button:hover {
-      transform: scale(1.05);
-      background-color: #00ab47;
-    }
-    h3{
-      background-color:#243b55;
+    .main input{
       padding: 8px;
-      border-radius: 3px;
+      border-radius:8px;
+      background-color: rgb(228, 228, 228);
+      border: 1px solid rgba(202, 211, 221, 0.5);
+      color: white;
+      outline:none;
+      color: #101828;
+      flex:1;
     }
-    #theList {  
-      padding-left: 30px;
-      margin-top: 15px;
-      text-align: left;
+    #add-btn{
+      color: #1e334f;
       font-weight: bold;
+      padding: 10px 12px;
+      border-radius: 8px;
+    }
+    #add-btn:hover{
+      background-color: rgba(230, 230, 230, 0.876);
+      cursor: pointer;
+    }
+    .collect{
+      display: flex;
+      width: 100%;
+      gap: 8px;
+    }
+    ol{
+      padding-left: 20px;
+    }
+    li{
+      border-bottom: 1px solid #425d7e;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .list{
+      color: white;
+      text-align: left;
+    }
+    .list button{
+      padding: 8px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+    }
+    .done-btn{
+      background-color: rgb(0, 183, 0);
+    }
+    .done-btn:hover{
+      background-color: rgb(0, 164, 0);
+    }
+    .dlt-btn{
+      background-color: rgb(249, 1, 1);
+    }
+    .dlt-btn:hover{
+      background-color: rgb(202, 0, 0);
+    }
+    .done-text{
+      text-decoration: line-through;
+    }
+    li div{
+      display:flex;
+      gap: 10px;
     }
   </style>
 </head>
 <body>
   <h1>TO DO LIST</h1>
-  <div id="main">
-    <input type="text" id="create" placeholder="Create an activity">
-    <button id="btn" onclick="createList()">Add</button>
-    <h3>Tasks</h3>
-    <ol id="theList"></ol>
+  <div class="main">
+    <div class="collect">
+      <input type="text" id="input" placeholder="Enter Task">
+     <button id="add-btn" onclick="createTask()">ADD</button>
+    </div>
+    <div class="list">
+      <ol id="taskList"></ol>
+    </div>
+
   </div>
 
-  <script>
-    function createList(){
-      let input = document.getElementById("create");
-      let list  = document.getElementById("theList");
-      let task = input.value;
-      console.log("working");
-      if(task==""){
-        alert("Its Empty")
-        return;
-      }
-      let li = document.createElement("li");
-      li.innerText = task;
+<script>
+  function createTask(){
+    let input = document.getElementById("input");
+    let list = document.getElementById("taskList");
 
-      list.appendChild(li);
-      input.value="";
+    let task = document.createElement("li");
+    
+    let textSpan = document.createElement("div");
+    textSpan.textContent = input.value;
+
+    let btnContaier = document.createElement("div");
+
+    let doneBtn = document.createElement("button");
+    doneBtn.textContent="Done";
+    doneBtn.classList.add("done-btn");
+
+    let dltBtn = document.createElement("button");
+    dltBtn.textContent="Delete";
+    dltBtn.classList.add("dlt-btn");
+
+    doneBtn.onclick=function(){
+      textSpan.classList.toggle("done-text");
     }
-  </script>
+    dltBtn.onclick=function(){
+      task.remove();
+    }
+
+    if( input.value === ""){
+      alert("Empty !!!");
+      return;
+    }
+
+    btnContaier.appendChild(doneBtn);
+    btnContaier.appendChild(dltBtn);
+    task.appendChild(textSpan);
+    task.appendChild(btnContaier);
+    list.appendChild(task);
+
+    input.value="";
+  }
+</script>
+
 </body>
 </html>
