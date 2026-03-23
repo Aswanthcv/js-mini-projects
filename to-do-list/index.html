@@ -11,46 +11,50 @@
       box-sizing: border-box;
     }
     body{
-      background: linear-gradient(145deg, #101828 0%, #1e334f 50%, #243b55 100%);
+      background: linear-gradient(145deg, #0f172a, #1e293b, #334155);
       min-height: 100vh;
       font-family: Impact, 'Arial Narrow Bold', sans-serif;
       text-align: center;  
     }
     h1{
       padding: 30px;
-      color:whitesmoke;
+      color:#e2e8f0;
     }
     .main{
       margin: auto;
       width: 40%;
-      background-color: #1e334f;
+      background-color: #1e293b;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 20px;
-      border: 0.5px solid rgba(109, 127, 148, 0.5);
+      border: #334155;
       border-radius: 25px;
-      box-shadow: 10px 10px 15px #132133;
+      box-shadow: 10px 10px 15px #020617;
       gap: 15px;
     }
     .main input{
       padding: 8px;
       border-radius:8px;
-      background-color: rgb(228, 228, 228);
-      border: 1px solid rgba(202, 211, 221, 0.5);
-      color: white;
+      background:transparent;
+      border: 1px solid rgba(255, 255, 255, 0.872);
+      color: rgb(255, 255, 255);
       outline:none;
-      color: #101828;
       flex:1;
     }
+    .main input::placeholder{
+      color: rgba(255, 255, 255, 0.781);
+    }
     #add-btn{
-      color: #1e334f;
+      background-color: #3b82f6;
+      color: #ffffff;
       font-weight: bold;
       padding: 10px 12px;
       border-radius: 8px;
+      border:none;
     }
     #add-btn:hover{
-      background-color: rgba(230, 230, 230, 0.876);
+      background-color: #2563eb;
       cursor: pointer;
     }
     .collect{
@@ -68,7 +72,7 @@
       margin-bottom: 10px;
     }
     .list{
-      color: white;
+      color: #e2e8f0;
       text-align: left;
     }
     .list button{
@@ -78,9 +82,9 @@
       border: none;
     }
     .pending{
-      background-color: rgb(224, 174, 9);
+      background-color: rgb(241, 187, 10);
     }
-    .pending-btn:hover{
+    .pending:hover{
       background-color: rgb(208, 160, 4);
     }
     .completed{
@@ -103,7 +107,54 @@
       gap: 10px;
     }
 
+    /* theme button */
+    .theme-btn{
+      background-color: #e2e8f0;
+      color: #0f172a;
+      padding: 6px 8px;
+      border-radius: 10px;
+      border:none;
+      box-shadow: 0px 0px 35px rgba(255, 255, 255, 0.675);
+      margin-top: 30px;
+      cursor: pointer;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+    }
 
+    body.light{
+      background: linear-gradient(to bottom, #d2e7fd, #e2e8f0);
+      color: black;
+    }
+    .light h1{
+      color: #0f172a;
+    }
+    .light .main{
+      background-color: #ffffff;
+      border:1px solid #cbd5e1;
+      box-shadow: 8px 8px 20px rgba(0,0,0,0.1);
+    }
+    .light input{
+      background-color: #f8fafc;
+      border: 1px solid #94a3b8;
+      color: #0f172a;
+    }
+    .light input::placeholder{
+      color: #64748b;
+    }
+    .light .theme-btn{
+      background-color: #12356c;
+      color: white;
+      box-shadow: 0px 0px 25px #243b55;
+    }
+    .light li{
+      border-bottom: 1px solid #cbd5e1;
+    }
+    .light .list{
+      color: #0f172a;
+    }
+
+    
     @media (max-width: 768px) {
       .main{
         width: 90%;
@@ -124,6 +175,7 @@
 
   </div>
 
+  <button class="theme-btn" id="themeBtn" onclick="themeChange()">Light</button>
 <script>
   function createTask(){
     let input = document.getElementById("input");
@@ -174,6 +226,18 @@
     list.appendChild(task);
 
     input.value="";
+  }
+
+  function themeChange(){
+    let body=document.body;
+    let tbutton=document.getElementById("themeBtn");
+
+    if(body.classList.toggle("light")){
+      tbutton.textContent="Dark";
+    }
+    else{
+      tbutton.textContent="Light";
+    }
   }
 </script>
 
