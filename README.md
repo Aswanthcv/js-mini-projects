@@ -11,14 +11,20 @@ Simple Rock Paper Scissors game using HTML, CSS and **JavaScript**.
 
 # 2.TO-DO List
 
-Just created the structure.
+  Simple TO DO list page, With LIght-Dark Theme Toggle button.
 
-## Future updates
-- Remove Task
-- Edit Task
-- Mark Task Completion
-- Add Responsiveness
+  ## Features
+  -Input Tasks
+  -Complete,Delete buttons
 
+# 3.COUNTER
+
+  Increment and Decrement on Button click
+
+  ## Features
+  -Increment,Decrement and Clear button
+  
 ## Try it out
  - Rock Paper Scissors: https://aswanthcv.github.io/js-mini-projects/rock-paper-scissors/
  - TO DO List: https://aswanthcv.github.io/js-mini-projects/to-do-list/
+ - COUNTER: https://aswanthcv.github.io/js-mini-projects/counter/
