@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* card */
+    .main{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 35px;
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      min-width: 280px;
+    }
+
+    /* top section */
+    .top{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    /* number */
+    #value{
+      font-size: 120px;
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    /* buttons (clean neutral style) */
+    .incr, .decr{
+      width: 55px;
+      height: 55px;
+      font-size: 28px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      background: #f1f5f9;
+      color: #0f172a;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: bold;
+    }
+
+    /* hover effect */
+    .incr:hover, .decr:hover{
+      background: #e2e8f0;
+      transform: scale(1.08);
+    }
+
+    /* clear button */
+    .bottom{
+      display: flex;
+      justify-content: center;
+    }
+
+    .clr{
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .clr:hover{
+      background: #e2e8f0;
+    }
+    .disabled{
+      background-color: #e2e8f0;  
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="top">
+      <button class="decr" id="decr" onclick="valueDecrement()"> < </button>
+      <h1 id="value">0</h1>
+      <button class="incr" id="incr" onclick="valueIncrement()"> > </button>
+    </div>
+    <div class="bottom">
+      <button class="clr" id="clr" onclick="valueClear()">CLEAR</button>
+    </div>
+  </div>
+
+  <script>
+    let valueDisplay = document.getElementById("value");
+    let decrementButton = document.getElementById("decr");
+
+    let count=0;
+
+    function updateDisplay(){
+      valueDisplay.textContent=count;
+    } 
+
+    function valueDecrement(){
+      if( count >0){
+        count--;
+      }
+      updateDisplay();
+      
+    }
+
+    function valueIncrement(){
+      count++;
+      updateDisplay();
+    }
+   
+    function valueClear(){
+      count=0;
+      updateDisplay();
+    }
+  </script>
+</body>
+</html>
