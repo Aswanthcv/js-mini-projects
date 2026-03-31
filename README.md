@@ -34,11 +34,11 @@ Simple Rock Paper Scissors game using HTML, CSS and **JavaScript**.
   -Clear display (C button)
   -Grid layout
   -Simple and minimal UI
+  -Backspace (DEL)
+  -Responsive
 
   ## Future updates
-  -Add backspace (DEL) functionality
   -Add keyboard support
-  -Improve Responsiveness (on multiple screens)
 
 # 5.NUMBER GUESS GAME
 

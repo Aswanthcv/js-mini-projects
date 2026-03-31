@@ -32,6 +32,7 @@ body{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 10px;
+  margin-bottom: 12px;
 }
 .equal{
   grid-column: span 2;
@@ -49,3 +50,36 @@ button:hover{
 .ops{
     color: #001dda;
 }
+
+@media (max-width: 600px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh; /* better for mobile */
+  }
+  .calculator {
+    width: 100%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+  .display-screen input {
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .buttons-part {
+    gap: 8px;
+  }
+
+  .buttons-part button {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .calculator {
+    width: 60%;
+  }
+}  
