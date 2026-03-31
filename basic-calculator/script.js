@@ -19,7 +19,7 @@ function btnClick(value){
     function clearDisplay() {
       document.getElementById("display").value = "";
     }
-
+    
     function clearLast() {
       let display = document.getElementById("display");
       display.value = display.value.slice(0, -1);
