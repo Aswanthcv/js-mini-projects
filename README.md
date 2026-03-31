@@ -40,8 +40,26 @@ Simple Rock Paper Scissors game using HTML, CSS and **JavaScript**.
   -Add keyboard support
   -Improve Responsiveness (on multiple screens)
 
+# 5.NUMBER GUESS GAME
+
+  -A simple interactive web-based game where the user tries to guess a randomly generated number between 1 and 100.
+
+  ## Features
+  -Random number generation on each game start
+  -User input validation (empty + range check)
+  -Feedback based on guess
+  -Tracks attempts
+  -Display result with attempts
+  -Reset function to start new game  
+  -considered UX on Input and Buttons
+
+  ## Future updates
+  -Keyboard support
+  -Animations
+
 ## Try it out
- - Rock Paper Scissors: https://aswanthcv.github.io/js-mini-projects/rock-paper-scissors/
- - TO DO List: https://aswanthcv.github.io/js-mini-projects/to-do-list/
- - COUNTER: https://aswanthcv.github.io/js-mini-projects/counter/
- - CALCULATOR : https://aswanthcv.github.io/js-mini-projects/basic-calculator/
+ - Rock Paper Scissors 👊✋✌️ : https://aswanthcv.github.io/js-mini-projects/rock-paper-scissors/
+ - TO DO List 📝 : https://aswanthcv.github.io/js-mini-projects/to-do-list/
+ - COUNTER ➕ ➖ https://aswanthcv.github.io/js-mini-projects/counter/
+ - CALCULATOR 🔢 : https://aswanthcv.github.io/js-mini-projects/basic-calculator/
+ - NUMBER GUESS 🎲 : https://aswanthcv.github.io/js-mini-projects/number-guess/
